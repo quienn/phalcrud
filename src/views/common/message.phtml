@@ -1,0 +1,7 @@
+<div class="alert alert-<?php echo $success === true ? 'success' : 'error'; ?>">
+  <?php echo $message; ?>
+</div>
+
+<?php
+
+echo Phalcon\Tag::linkTo(['/', 'atrás', 'class' => 'btn btn-primary']); ?>

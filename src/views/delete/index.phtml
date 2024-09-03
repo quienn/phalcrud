@@ -1,0 +1,27 @@
+<?php declare(strict_types=1);
+echo Phalcon\Tag::formLegacy(['action' => 'delete/destroy', 'class' => 'form']); ?>
+<?php echo Phalcon\Tag::hiddenField(['id', 'value' => $user->id]); ?>
+
+<!-- estás seguro? -->
+<fieldset class="form-group">
+  <label for="name">nombre</label>
+  <?php echo Phalcon\Tag::textField(['name', 'value' => $user->name, 'class' => 'form-control', 'disabled' => 'disabled']); ?>
+</fieldset>
+
+<fieldset class="form-group">
+  <label for="email">correo</label>
+  <?php echo Phalcon\Tag::textField(['email', 'value' => $user->email, 'class' => 'form-control', 'disabled' => 'disabled']); ?>
+</fieldset>
+
+<fieldset class="form-group">
+  <label for="pass">contraseña</label>
+  <?php echo Phalcon\Tag::textField(['pass', 'value' => $user->pass, 'class' => 'form-control', 'disabled' => 'disabled']); ?>
+</fieldset>
+
+<div class="form-actions">
+  <?php echo Phalcon\Tag::submitButton(['eliminar', 'class' => 'btn btn-danger btn-block']); ?>
+</div>
+
+<?php echo Phalcon\Tag::endForm(); ?>
+
+<?php echo Phalcon\Tag::linkTo(['/', 'atrás', 'class' => 'btn btn-primary']); ?>
